@@ -1,8 +1,11 @@
 import '../styles/index.css'
+
+import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
-import Layout from '../components/Layout'
 import { createContext } from 'react'
+
+import Layout from '../components/Layout'
 
 export const AppContext = createContext<{
   translate?: {}
@@ -14,11 +17,14 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }
 
   return (
-    <AppContext.Provider value={{ translate: {} }}>
-      <DefaultSeo title="Explore" titleTemplate="%s | Jozi.me" />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </AppContext.Provider>
+    <>
+      <AppContext.Provider value={{ translate: {} }}>
+        <DefaultSeo title="Explore" titleTemplate="%s | Jozi.me" />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AppContext.Provider>
+      <Analytics />
+    </>
   )
 }

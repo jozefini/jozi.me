@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+
 import { AppContext } from '../pages/_app'
 import { StringObject } from '../types'
 import { strReplacer } from './helpers'

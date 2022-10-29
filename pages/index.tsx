@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
+
 import Intro from '../components/ui/Intro'
 
 interface HomePageProps {}

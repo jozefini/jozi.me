@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { __ } from '../../lib/translate'
+
 import useStore from '../../lib/store'
+import { __ } from '../../lib/translate'
 
 const css = {
   wrapper: 'flex items-center w-1/3',

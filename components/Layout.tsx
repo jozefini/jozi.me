@@ -1,5 +1,6 @@
 // import { AnimatePresence } from 'framer-motion'
 import { ReactNode } from 'react'
+
 import useStore from '../lib/store'
 import Header from './header/Header'
 // import Footer from './footer/Footer'

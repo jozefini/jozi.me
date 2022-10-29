@@ -1,6 +1,7 @@
 import { createClient, SanityClient } from 'next-sanity'
-import { asyncReadFile, asyncWriteFile } from './fileSystem'
+
 import { sanityConfig } from './config'
+import { asyncReadFile, asyncWriteFile } from './fileSystem'
 
 const sanityClient = (preview): SanityClient => {
   return preview

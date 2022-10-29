@@ -1,6 +1,7 @@
-import { LinkHTMLAttributes, ReactNode } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { LinkHTMLAttributes, ReactNode } from 'react'
+
 import { cn } from '../../lib/helpers'
 
 interface ActiveLinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {

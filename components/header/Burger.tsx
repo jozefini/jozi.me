@@ -1,6 +1,6 @@
 import { cn } from '../../lib/helpers'
-import { __ } from '../../lib/translate'
 import useStore from '../../lib/store'
+import { __ } from '../../lib/translate'
 
 const css = {
   wrapper:

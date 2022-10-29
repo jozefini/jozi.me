@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
+
 import Hero from '../components/ui/Hero'
 
 interface ArticlesPageProps {}
