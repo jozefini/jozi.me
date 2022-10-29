@@ -12,9 +12,9 @@
     "type-check": "tsc --noEmit"
   },
   "prettier": {
+    "printWidth": 95,
     "semi": false,
-    "singleQuote": true,
-    "printWidth": 95
+    "singleQuote": true
   },
   "dependencies": {
     "@next/env": "^13.0.0",

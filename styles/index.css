@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply bg-l-bg text-l-clr dark:text-d-clr dark:bg-d-bg tracking-tight duration-150 transition-colors;
+    @apply bg-l-bg tracking-tight text-l-clr transition-colors duration-150 dark:bg-d-bg dark:text-d-clr;
   }
 }
