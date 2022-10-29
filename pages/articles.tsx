@@ -1,30 +1,29 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 
 import Hero from '../components/ui/Hero'
 
-interface ArticlesPageProps {}
-
 const css = {
   main: '',
-  hero: 'bg-indigo-600/10 dark:bg-indigo-900',
+  heroGradient:
+    'from-indigo-400/10 to-amber-400/10 dark:from-indigo-300/20 dark:to-amber-300/20',
 }
 
-export default function ArticlesPage({}: ArticlesPageProps) {
-  const title = 'About'
-  const description = 'Building a better web is my everyday goal.'
+export default function ArticlesPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const title = 'Articles'
+  const description = "Some discoveries that I'd like to share with you."
 
   return (
     <>
       <NextSeo title="Articles" />
       <main className={css.main}>
-        <Hero title={title} description={description} className={css.hero} />
+        <Hero title={title} description={description} bgGradient={css.heroGradient} />
       </main>
     </>
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async ({}: GetStaticPropsContext) => {
   return {
     props: {},
   }

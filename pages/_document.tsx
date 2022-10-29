@@ -3,22 +3,17 @@ import { ServerStyleSheetDocument } from 'next-sanity/studio'
 
 export default class Document extends ServerStyleSheetDocument {
   render() {
-    const fontFamily = 'Poppins'
-    const fontWeight = [400, 500, 600, 700]
-    const fontUrl = `https://fonts.googleapis.com/css2?family=${fontFamily}:wght@${fontWeight.join(
-      ';'
-    )}&display=swap`
+    const fontName = 'Poppins'
+    const fontWght = [400, 500, 600, 700].join(';')
 
     return (
       <Html lang="en">
         <Head>
-          <link rel="preload" href={fontUrl} as="style" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
           <link
-            href={fontUrl}
+            href={`https://fonts.googleapis.com/css2?family=${fontName}:wght@${fontWght}&display=swap`}
             rel="stylesheet"
-            media="print"
-            // @ts-ignore
-            onLoad="this.media='all'"
           />
           <script
             type="text/javascript"
