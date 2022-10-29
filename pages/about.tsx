@@ -5,7 +5,7 @@ import Hero from '../components/ui/Hero'
 
 const css = {
   main: '',
-  hero: 'bg-teal-600/10 dark:bg-teal-800',
+  heroGradient: 'from-teal-400/10 to-rose-400/10 dark:from-teal-300/20 dark:to-rose-300/20',
 }
 
 export default function AboutPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -16,7 +16,7 @@ export default function AboutPage({}: InferGetStaticPropsType<typeof getStaticPr
     <>
       <NextSeo title="About" />
       <main className={css.main}>
-        <Hero title={title} description={description} />
+        <Hero title={title} description={description} bgGradient={css.heroGradient} />
       </main>
     </>
   )
