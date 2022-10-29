@@ -4,6 +4,7 @@ interface HeroProps {
   className?: string
   title?: string
   description?: string
+  colors?: 'red' | 'blue'
 }
 
 const css = {
@@ -13,7 +14,7 @@ const css = {
   description: 'text-sm sm:text-base md:text-lg mt-2 sm:mt-3 max-w-2xl mx-auto',
 }
 
-export default function Hero({ className, title, description }: HeroProps) {
+export default function Hero({ className, title, description, colors }: HeroProps) {
   return (
     <section className={cn(css.section, className)}>
       <div className={css.inner}>
