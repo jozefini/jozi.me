@@ -16,7 +16,7 @@ export default function AboutPage({}: InferGetStaticPropsType<typeof getStaticPr
     <>
       <NextSeo title="About" />
       <main className={css.main}>
-        <Hero title={title} description={description} className={css.hero} />
+        <Hero title={title} description={description} />
       </main>
     </>
   )

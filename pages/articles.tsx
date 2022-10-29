@@ -9,8 +9,8 @@ const css = {
 }
 
 export default function ArticlesPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
-  const title = 'About'
-  const description = 'Building a better web is my everyday goal.'
+  const title = 'Articles'
+  const description = "Some discoveries that I'd like to share with you."
 
   return (
     <>
