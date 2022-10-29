@@ -39,5 +39,4 @@ yarn-error.log*
 studio/.env.development
 
 # Lockfiles
-package-lock.json
 pnpm-lock.yaml
