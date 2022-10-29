@@ -1,0 +1,11 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-l-bg text-l-clr dark:text-d-clr dark:bg-d-bg tracking-tight duration-150 transition-colors;
+  }
+}
