@@ -1,16 +1,14 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPathsContext, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 
 import Hero from '../components/ui/Hero'
-
-interface AboutPageProps {}
 
 const css = {
   main: '',
   hero: 'bg-teal-600/10 dark:bg-teal-800',
 }
 
-export default function AboutPage({}: AboutPageProps) {
+export default function AboutPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = 'About'
   const description = 'Building a better web is my everyday goal.'
 
@@ -24,7 +22,7 @@ export default function AboutPage({}: AboutPageProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async ({}: GetStaticPathsContext) => {
   return {
     props: {},
   }

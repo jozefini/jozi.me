@@ -1,15 +1,13 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPathsContext, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 
 import Intro from '../components/ui/Intro'
-
-interface HomePageProps {}
 
 const css = {
   main: '',
 }
 
-export default function HomePage({}: HomePageProps) {
+export default function HomePage({}: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = 'Creative Web Developer'
 
   return (
@@ -22,7 +20,7 @@ export default function HomePage({}: HomePageProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async ({}: GetStaticPathsContext) => {
   return {
     props: {},
   }

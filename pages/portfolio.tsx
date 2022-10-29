@@ -1,16 +1,14 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 
 import Hero from '../components/ui/Hero'
-
-interface PortfolioPageProps {}
 
 const css = {
   main: '',
   hero: 'bg-rose-600/10 dark:bg-rose-900',
 }
 
-export default function PortfolioPage({}: PortfolioPageProps) {
+export default function PortfolioPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
   const title = 'Portfolio'
   const description = 'A few of my recent work and side projects.'
 
@@ -24,7 +22,7 @@ export default function PortfolioPage({}: PortfolioPageProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async ({}: GetStaticPropsContext) => {
   return {
     props: {},
   }
