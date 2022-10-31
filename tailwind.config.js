@@ -8,10 +8,10 @@ module.exports = {
     extend: {
       colors: {
         brand: colors.neutral,
-        'l-bg': colors.neutral[200],
-        'l-clr': colors.neutral[800],
-        'd-bg': colors.neutral[800],
-        'd-clr': colors.neutral[200],
+        'l-bg': colors.neutral[100],
+        'l-clr': colors.neutral[900],
+        'd-bg': colors.neutral[900],
+        'd-clr': colors.neutral[100],
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],

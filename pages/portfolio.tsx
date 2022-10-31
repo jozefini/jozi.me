@@ -6,7 +6,7 @@ import Hero from '../components/ui/Hero'
 const css = {
   main: '',
   heroGradient:
-    'from-rose-400/10 to-indigo-400/10 dark:from-rose-300/20 dark:to-indigo-300/20',
+    'from-rose-400/10 to-indigo-400/10 dark:from-rose-400/10 dark:to-indigo-400/10',
 }
 
 export default function PortfolioPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
