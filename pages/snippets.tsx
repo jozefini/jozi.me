@@ -5,7 +5,7 @@ import Hero from '../components/ui/Hero'
 
 const css = {
   main: '',
-  heroGradient: 'from-amber-400/10 to-teal-400/10 dark:from-amber-400/10 dark:to-teal-400/10',
+  heroGradient: 'from-amber-400 to-teal-400',
 }
 
 export default function SnippetsPage({}: InferGetStaticPropsType<typeof getStaticProps>) {
