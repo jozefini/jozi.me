@@ -3,11 +3,11 @@ import { __ } from '../../lib/translate'
 
 const css = {
   wrapper:
-    'relative inline-flex justify-center items-center h-11 w-11 rounded-full hover:bg-black/5 dark:hover:bg-white/5',
+    'relative inline-flex shrink-0 justify-center items-center h-11 w-11 rounded-full hover:bg-black/5 dark:hover:bg-white/5',
   icon: 'w-6',
-  sun: 'dark:translate-y-full duration-150 stroke-l-clr',
+  sun: 'dark:opacity-0 transition-opacity stroke-l-clr',
   sunCore: 'fill-[none]',
-  moon: '-translate-y-full dark:translate-y-0 dark:stroke-d-clr duration-150 fill-[none]',
+  moon: 'opacity-0 dark:opacity-100 dark:stroke-d-clr transition-opacity fill-[none]',
 }
 
 export default function ThemeMode() {
