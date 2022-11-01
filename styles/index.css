@@ -8,4 +8,8 @@
   body {
     @apply bg-l-bg tracking-tight text-l-clr transition-colors duration-150 dark:bg-d-bg dark:text-d-clr;
   }
+
+  main {
+    margin-bottom: 100vh;
+  }
 }
