@@ -18,11 +18,13 @@ export default function Layout({ children }: LayoutProps) {
   const isMenuOpen = useStore((state) => state.isMenuOpen)
 
   return (
-    <div className={css.wrapper}>
+    <>
       <Header />
-      {children}
-      {/* <Footer /> */}
-      {/* <AnimatePresence mode="wait">{isMenuOpen && <Modal />}</AnimatePresence> */}
-    </div>
+      <div className={css.wrapper}>
+        {children}
+        {/* <Footer /> */}
+        {/* <AnimatePresence mode="wait">{isMenuOpen && <Modal />}</AnimatePresence> */}
+      </div>
+    </>
   )
 }

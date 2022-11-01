@@ -4,7 +4,7 @@ import { __ } from '../../lib/translate'
 
 const css = {
   wrapper:
-    'md:hidden inline-flex justify-center items-center h-11 w-11 rounded-full hover:bg-black/5 dark:hover:bg-white/5',
+    'md:hidden inline-flex shrink-0 justify-center items-center h-11 w-11 rounded-full hover:bg-black/5 dark:hover:bg-white/5',
   lines: 'w-6 h-6 space-y-1.5 flex flex-col items-center justify-center',
   line: 'bg-black dark:bg-white w-full h-[2px] origin-center duration-[150ms] transition-[transform]',
   lineTop: 'rotate-45 translate-y-1',
