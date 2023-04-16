@@ -1,7 +1,7 @@
-import { cn } from '../lib/helpers'
+import { cn } from 'lib/helpers'
+import { Action } from './header/Action'
 import { Logo } from './header/Logo'
 import { Menu } from './header/Menu'
-import { Action } from './header/Action'
 
 interface HeaderProps {
   className?: string

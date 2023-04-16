@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { cn } from 'lib/helpers'
 // import { Icon } from 'components/common/Icon'
 import picture from 'assets/images/picture.jpg'
+import { cn } from 'lib/helpers'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface LogoProps {
   className?: string

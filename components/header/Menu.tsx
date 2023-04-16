@@ -1,7 +1,7 @@
-import { cn, getPath } from 'lib/helpers'
 import { useUniqueArrayIds } from 'hooks/useUniqueArrayIds'
-import { ActiveLink } from '../common/ActiveLink'
+import { cn, getPath } from 'lib/helpers'
 import { Space_Grotesk } from 'next/font/google'
+import { ActiveLink } from '../common/ActiveLink'
 
 interface MenuProps {
   className?: string

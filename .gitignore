@@ -40,3 +40,5 @@ studio/.env.development
 
 # Lockfiles
 pnpm-lock.yaml
+
+.vscode

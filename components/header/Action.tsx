@@ -1,6 +1,6 @@
-import { cn, getPath } from '../../lib/helpers'
-import { ActiveLink } from '../common/ActiveLink'
 import { Space_Grotesk } from 'next/font/google'
+import { cn, getPath } from 'lib/helpers'
+import { ActiveLink } from '../common/ActiveLink'
 
 interface ActionProps {
   className?: string
