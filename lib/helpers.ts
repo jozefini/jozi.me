@@ -1,4 +1,4 @@
-import { PATHS } from './constants'
+import { PATHS } from 'lib/constants'
 
 export function cn(...args: any[]) {
   return args.filter(Boolean).join(' ') || undefined

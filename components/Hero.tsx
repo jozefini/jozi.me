@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { cn, getPath } from 'utils/helpers'
+import { cn, getPath } from '../lib/helpers'
 import { Icon } from './common/Icon'
 import { Space_Grotesk } from 'next/font/google'
 

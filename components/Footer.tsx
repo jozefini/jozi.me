@@ -1,4 +1,4 @@
-import { cn } from 'utils/helpers'
+import { cn } from '../lib/helpers'
 
 interface FooterProps {
   className?: string

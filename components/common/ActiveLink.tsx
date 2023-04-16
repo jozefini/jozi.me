@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LinkHTMLAttributes, ReactNode } from 'react'
-import { cn } from 'utils/helpers'
+import { cn } from 'lib/helpers'
 
 interface ActiveLinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   href: string

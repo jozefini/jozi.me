@@ -1,4 +1,4 @@
-import { cn, getPath } from 'utils/helpers'
+import { cn, getPath } from '../../lib/helpers'
 import { ActiveLink } from '../common/ActiveLink'
 import { Space_Grotesk } from 'next/font/google'
 

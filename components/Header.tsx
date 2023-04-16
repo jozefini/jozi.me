@@ -1,4 +1,4 @@
-import { cn } from 'utils/helpers'
+import { cn } from '../lib/helpers'
 import { Logo } from './header/Logo'
 import { Menu } from './header/Menu'
 import { Action } from './header/Action'
