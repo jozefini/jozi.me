@@ -1,28 +1,29 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { LinkHTMLAttributes, ReactNode } from 'react'
+'use client'
 
-import { cn } from '../../lib/helpers'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { LinkHTMLAttributes, ReactNode } from 'react'
+import { cn } from 'utils/helpers'
 
 interface ActiveLinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   href: string
   className?: string
-  activeClassName?: string
-  defaultClassName?: string
+  classNameIn?: string
+  classNameOut?: string
   exact?: boolean
   children?: ReactNode
 }
 
-export default function ActiveLink({
+export function ActiveLink({
   href,
   className,
-  activeClassName,
-  defaultClassName,
+  classNameIn,
+  classNameOut,
   children,
   exact,
   ...restProps
 }: ActiveLinkProps) {
-  const { asPath } = useRouter()
+  const asPath = usePathname()
 
   return (
     <Link
@@ -30,8 +31,8 @@ export default function ActiveLink({
       className={cn(
         className,
         asPath === href || (!exact && asPath.startsWith(`${href}/`))
-          ? activeClassName
-          : defaultClassName
+          ? classNameIn
+          : classNameOut
       )}
       {...restProps}
     >

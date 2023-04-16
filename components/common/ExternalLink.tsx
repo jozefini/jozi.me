@@ -4,7 +4,7 @@ interface ExternalLinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   children?: ReactNode
 }
 
-export default function ExternalLink({ children, ...props }: ExternalLinkProps) {
+export function ExternalLink({ children, ...props }: ExternalLinkProps) {
   return (
     <a rel="noopener noreferrer nofollow" target="_blank" {...props}>
       {children}

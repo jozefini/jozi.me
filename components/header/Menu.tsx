@@ -1,53 +1,60 @@
-import { NavLink } from '../../types'
-import ActiveLink from '../common/ActiveLink'
+import { cn, getPath } from 'utils/helpers'
+import { useUniqueArrayIds } from 'hooks/useUniqueArrayIds'
+import { ActiveLink } from '../common/ActiveLink'
+import { Space_Grotesk } from 'next/font/google'
 
-const css = {
-  wrapper: 'hidden md:flex items-center shrink-0 space-x-10 font-medium',
-  item: '',
-  link: 'relative inline-flex items-center px-4 h-11 rounded-lg text-l-clr dark:text-d-clr duration-150 transition-[color,opacity]',
-  linkActive: '[&>i]:transition-none [&>span]:scale-100 [&>span]:opacity-100',
-  linkDefault: '[&:hover>i]:scale-x-100',
-  glow: 'absolute inset-0 scale-50 opacity-0 bg-black/5 dark:bg-white/5 rounded-lg duration-[150ms,300ms] transition-[opacity,transform]',
-  underline:
-    'absolute inline-flex origin-left bg-current w-[calc(100%-2rem)] scale-x-0 h-0.5 left-[1rem] bottom-2 duration-300 transition-[transform]',
+interface MenuProps {
+  className?: string
 }
 
-const navLinks: NavLink[] = [
+const css = {
+  wrapper: '',
+  list: 'flex items-center justify-center gap-x-12',
+  item: '',
+  link: 'text-sm uppercase py-3 tracking-widest',
+  linkIn: 'text-white shadow-[inset_0_-5px_0_#fff]',
+  linkOut:
+    'shadow-[inset_0_0_0_#fff] transition-[color,box-shadow] text-white/50  hover:text-white hover:shadow-[inset_0_-5px_0_#fff]',
+}
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
+const allLinks = [
   {
-    path: '/about',
-    title: 'About',
+    path: getPath('root'),
+    title: 'Home',
   },
   {
-    path: '/portfolio',
+    path: getPath('portfolio'),
     title: 'Portfolio',
   },
   {
-    path: '/articles',
-    title: 'Articles',
+    path: getPath('about'),
+    title: 'About',
   },
   {
-    path: '/snippets',
-    title: 'Snippets',
+    path: getPath('blog'),
+    title: 'Blog',
   },
 ]
 
-export default function Menu() {
+export function Menu({ className }: MenuProps) {
+  const navLinks = useUniqueArrayIds(allLinks)
+
   return (
-    <ul className={css.wrapper}>
-      {navLinks?.map(({ path, title }: NavLink, i: number) => (
-        <li className={css.item} key={i}>
-          <ActiveLink
-            className={css.link}
-            activeClassName={css.linkActive}
-            defaultClassName={css.linkDefault}
-            href={path}
-          >
-            <span className={css.glow} />
-            <i className={css.underline} />
-            {title}
-          </ActiveLink>
-        </li>
-      ))}
-    </ul>
+    <nav className={cn(css.wrapper, className)}>
+      <ul className={cn(css.list, spaceGrotesk.className)}>
+        {navLinks.map(({ id, path, title }) => (
+          <li key={id} className={css.item}>
+            <ActiveLink
+              href={path}
+              className={cn(css.link)}
+              classNameIn={css.linkIn}
+              classNameOut={css.linkOut}
+            >
+              {title}
+            </ActiveLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
