@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         body: '#1d2228',
         primary: '#c11822',
+        'primary-alt': '#e74751',
       },
       zIndex: {
         1: 1,

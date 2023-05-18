@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Sora } from 'next/font/google'
+import { Syne } from 'next/font/google'
 import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
 import 'assets/styles.css'
@@ -8,7 +8,7 @@ interface LayoutProps {
   children: ReactNode
 }
 
-const font = Sora({ subsets: ['latin'] })
+const font = Syne({ subsets: ['latin'] })
 const css = {
   inner: 'relative min-h-screen overflow-hidden',
 }
