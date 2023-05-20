@@ -16,7 +16,7 @@
 				<Magnetic power={60} perspective={0.5} let:style>
 					<a
 						href={ROUTE_PATHS.contact}
-						class="w-28 h-28 sm:h-36 sm:w-36 md:h-48 md:w-48 rounded-full in-flex centered bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm sm:text-base md:text-lg"
+						class="sq-28 sm:sq-36 md:sq-48 rounded-full in-flex centered bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm sm:text-base md:text-lg"
 					>
 						<span {style}>Get in touch</span>
 					</a>
