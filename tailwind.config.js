@@ -7,7 +7,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				body: '#999D9E'
+				body: '#999D9E',
+				footer: '#1C1D20'
 			},
 			fontWeight: {
 				thin: 200,
