@@ -7,7 +7,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				body: '#999D9E',
+				cream: '#999D9E',
 				footer: '#1C1D20'
 			},
 			fontWeight: {

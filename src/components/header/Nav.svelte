@@ -6,10 +6,10 @@
 
 	const css = {
 		wrapper:
-			'hidden md:flex font- items-center gap-x-6 text-lg [&:hover_a:not(:hover)>*]:scale-0 text-black dark:text-white transition-colors',
+			'hidden md:flex fw-500 items-center gap-x-6 text-lg [&:hover_a:not(:hover)>*]:scale-0 text-black dark:text-white transition-colors',
 		magnetic: 'in-flex centered',
 		link: 'relative group px-4 py-2',
-		dot: 'dot text-black dark:text-white absolute bottom-0 left-1/2 sq-1.5 rounded-full bg-current in-flex -translate-x-1/2 transition-[background_transform] duration-[150ms_300ms]',
+		dot: 'text-black dark:text-white absolute bottom-0 left-1/2 sq-1.5 rounded-full bg-current in-flex -translate-x-1/2 transition-[background_transform] duration-[150ms_300ms]',
 		defaultDot: 'scale-0 group-hover:scale-100',
 		activeDot: 'scale-100'
 	}
@@ -38,7 +38,7 @@
 	<ul class={css.wrapper}>
 		{#each navLinks as { title, path }}
 			<li>
-				<Magnetic className={css.magnetic} power={30}>
+				<Magnetic class={css.magnetic} power={30}>
 					<a href={path} class={css.link}>
 						{title}
 						<span

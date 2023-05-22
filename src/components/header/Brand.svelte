@@ -7,7 +7,7 @@
 	}
 </script>
 
-<Magnetic className={css.magnetic} power={30}>
+<Magnetic class={css.magnetic} power={30}>
 	<a href="/">
 		<svg class={css.icon} viewBox="0 0 26.46 26.46" xmlns="http://www.w3.org/2000/svg">
 			<path

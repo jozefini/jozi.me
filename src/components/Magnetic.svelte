@@ -5,7 +5,6 @@
 	export let duration = 1000
 	export let power = 100
 	export let perspective = 1
-	export let className = ''
 
 	let el
 	const optIn = { duration, easing: cubicOut }
@@ -28,11 +27,11 @@
 </script>
 
 <div
-	class={className}
+	{...$$restProps}
 	bind:this={el}
 	on:mousemove={onMouseMove}
 	on:mouseleave={onMouseLeave}
 	style="transform: translate({$x}px, {$y}px)"
 >
-	<slot style="transform: translate({$x * perspective}px, {$y * perspective}px)" />
+	<slot x={$x} y={$y} style="transform: translate({$x * perspective}px, {$y * perspective}px)" />
 </div>

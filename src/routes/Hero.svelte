@@ -1,5 +1,6 @@
-<script lang="ts"></script>
+<script>
+</script>
 
-<section class="under-header h-screen max-h-[1000px] bg-body">
+<section class="under-header h-screen max-h-[1000px] bg-cream">
 	<div class="max-w-7xl mx-auto px-4" />
 </section>
