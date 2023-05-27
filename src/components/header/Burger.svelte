@@ -41,7 +41,11 @@
 <div use:clickOutside on:outclick={hide}>
 	<div class={cn(css.wrapper, !hideBurger || $offCanvas ? css.showWrapper : css.hideWrapper)}>
 		<Magnetic class={css.magnetic} power={50}>
-			<button class={cn(css.btn, $offCanvas ? css.active : css.default)} on:click={toggle}>
+			<button
+				class={cn(css.btn, $offCanvas ? css.active : css.default)}
+				on:click={toggle}
+				aria-label="Toggle Menu"
+			>
 				<div class={cn(css.line, $offCanvas && css.activeLine)} />
 				<div class={cn(css.line, $offCanvas && css.activeLine)} />
 			</button>

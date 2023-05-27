@@ -29,7 +29,7 @@
 </script>
 
 <div class={cn(css.wrapper, hideBrand && css.hideWrapper)}>
-	<Magnetic tag="a" href="/" class={css.wrapper} power={30}>
+	<Magnetic tag="a" href="/" class={css.wrapper} power={30} aria-label="Link to homepage">
 		<svg class={css.icon} viewBox="0 0 26.46 26.46" xmlns="http://www.w3.org/2000/svg">
 			<path
 				stroke="currentColor"
