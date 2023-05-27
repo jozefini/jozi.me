@@ -1,18 +1,16 @@
-<script>
-	import { cn } from '$lib/utils/helpers'
+<script lang="ts">
 	import { offCanvas } from '$lib/stores/offCanvas'
-	import { fade } from 'svelte/transition'
+	import { fade, fly } from 'svelte/transition'
+	import { scale } from '$lib/utils/transitions'
+	import { cubicIn, cubicOut } from 'svelte/easing'
 
 	const { hide } = offCanvas
 
 	const css = {
-		wrapper: 'fixed max-w-[90%] w-[32rem] duration-[600ms] h-full top-0 right-0 z-40',
-		bgColor: 'absolute right-0 top-0 w-full h-full',
-		showWrapper: 'translate-x-0',
-		hideWrapper: 'translate-x-full',
-		edge: 'w-full absolute left-0 h-full bg-footer duration-[600ms]',
-		showEdge: 'rounded-l-0 delay-200',
-		hideEdge: 'rounded-l-[50%] delay-75',
+		wrapper: 'fixed max-w-[90%] w-[32rem] bg-canvas h-full top-0 right-0 z-40',
+		edge: 'overflow-hidden absolute w-[30%] scale-x-0 h-full right-full -mr-1 duration-[600ms]',
+		leftRounded:
+			'top-1/2 -translate-y-1/2 rounded-[50%] bg-canvas h-[150%] w-[750%] left-0 absolute',
 		overlay: 'fixed inset-0 bg-black/30'
 	}
 </script>
@@ -20,15 +18,23 @@
 {#if $offCanvas}
 	<div
 		class={css.overlay}
-		in:fade={{ duration: 500 }}
-		out:fade={{ duration: 300 }}
+		in:fade={{ duration: 600 }}
+		out:fade={{ duration: 400 }}
 		on:click={hide}
 		on:keyup={hide}
 	/>
-{/if}
 
-<div class={cn(css.wrapper, $offCanvas ? css.showWrapper : css.hideWrapper)}>
-	<div class={cn(css.edge, $offCanvas ? css.showEdge : css.hideEdge)} />
-	<div class={css.bgColor} />
-	<div class={cn(css.inner, $offCanvas ? css.showInner : css.hideInner)} />
-</div>
+	<div
+		class={css.wrapper}
+		in:fly={{ x: '100%', duration: 800, opacity: 1, easing: cubicOut }}
+		out:fly={{ x: '130%', duration: 600, opacity: 1, easing: cubicIn }}
+	>
+		<div
+			class={css.edge}
+			in:scale={{ from: 1, to: 0, duration: 600 }}
+			out:scale={{ from: 1, to: 0, duration: 500 }}
+		>
+			<div class={css.leftRounded} />
+		</div>
+	</div>
+{/if}
