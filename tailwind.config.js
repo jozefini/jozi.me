@@ -20,6 +20,9 @@ export default {
 				bold: 750,
 				extrabold: 850,
 				black: 950
+			},
+			transitionDuration: {
+				750: '750ms'
 			}
 			// Extend a class called iflex-cc to make a flex container with center center alignment.
 			// This is useful for centering a div in the middle of the screen.
