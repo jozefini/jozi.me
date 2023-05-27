@@ -8,7 +8,8 @@ export default {
 		extend: {
 			colors: {
 				cream: '#999D9E',
-				footer: '#1C1D20'
+				footer: '#1C1D20',
+				canvas: '#212225'
 			},
 			fontWeight: {
 				thin: 200,
