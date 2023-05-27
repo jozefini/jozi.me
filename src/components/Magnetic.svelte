@@ -5,6 +5,7 @@
 	export let duration = 1000
 	export let power = 100
 	export let perspective = 1
+	export let tag = 'div'
 
 	let el
 	const optIn = { duration, easing: cubicOut }
@@ -26,12 +27,13 @@
 	// Get class from parent component
 </script>
 
-<div
-	{...$$restProps}
+<svelte:element
+	this={tag}
 	bind:this={el}
 	on:mousemove={onMouseMove}
 	on:mouseleave={onMouseLeave}
 	style="transform: translate({$x}px, {$y}px)"
+	{...$$restProps}
 >
 	<slot x={$x} y={$y} style="transform: translate({$x * perspective}px, {$y * perspective}px)" />
-</div>
+</svelte:element>
