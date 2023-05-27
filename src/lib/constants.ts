@@ -5,3 +5,5 @@ export const ROUTE_PATHS = {
 	insights: '/insights',
 	contact: '/contact'
 }
+
+export const SHOW_BURGER_AT = 100
