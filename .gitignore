@@ -2,6 +2,7 @@
 /node_modules
 /studio/node_modules
 /.pnp
+/.svelte-kit
 .pnp.js
 
 # testing
