@@ -17,6 +17,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@jozefini/tailwindcss": "^0.0.97",
     "@next/env": "^13.0.0",
     "@portabletext/react": "^1.0.6",
     "@sanity/client": "^3.4.1",
