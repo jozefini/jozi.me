@@ -10,19 +10,11 @@
 
 	beforeNavigate((navigation: any) => {
 		if (!navigating) {
-			//navigating = true
-			//document.body.classList.add('overflow-hidden')
-			//navigation.cancel()
+			navigating = true
+			navigation.cancel()
 			handleChange = async () => {
 				const route = navigation.to.route.id
-				await goto(route, {
-					replaceState: true,
-					keepFocus: true,
-					noScroll: false
-				})
-				document.body.classList.remove('overflow-hidden')
-				// Tell window the window beforeonload.
-				window.onbeforeunload = null
+				await goto(route)
 				navigating = false
 			}
 		}
