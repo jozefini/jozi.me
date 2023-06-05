@@ -1,7 +1,7 @@
 import create from 'zustand'
 
 type AppStore = {
-  isMenuOpen: boolean,
+  isMenuOpen: boolean
 }
 
 const useStore = create<{
