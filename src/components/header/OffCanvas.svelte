@@ -2,7 +2,7 @@
 	import { offCanvas } from '$lib/stores/offCanvas'
 	import { fade, fly } from 'svelte/transition'
 	import { scale } from '$lib/utils/transitions'
-	import { cubicIn, cubicOut } from 'svelte/easing'
+	import { expoIn, expoOut } from 'svelte/easing'
 	import OffNav from './OffNav.svelte'
 
 	const { hide } = offCanvas
@@ -21,20 +21,20 @@
 	<div
 		class={css.overlay}
 		in:fade={{ duration: 800 }}
-		out:fade={{ duration: 600 }}
+		out:fade={{ duration: 500 }}
 		on:click={hide}
 		on:keyup={hide}
 	/>
 
 	<div
 		class={css.wrapper}
-		in:fly={{ x: '100%', duration: 800, opacity: 1, easing: cubicOut }}
-		out:fly={{ x: '130%', duration: 600, opacity: 1, easing: cubicIn }}
+		in:fly={{ x: '100%', duration: 800, opacity: 1, easing: expoOut }}
+		out:fly={{ x: '130%', duration: 500, opacity: 1, easing: expoIn }}
 	>
 		<div
 			class={css.edge}
-			in:scale={{ from: 1, to: 0, duration: 700 }}
-			out:scale={{ from: 1, to: 0, duration: 600 }}
+			in:scale={{ from: 1, to: 0, duration: 400 }}
+			out:scale={{ from: 1, to: 0, duration: 400 }}
 		>
 			<div class={css.leftRounded} />
 		</div>

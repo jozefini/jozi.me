@@ -4,14 +4,14 @@
 	import { ROUTE_PATHS } from '$lib/constants'
 	import Magnetic from '$components/Magnetic.svelte'
 	import { fly } from 'svelte/transition'
-	import { cubicIn, cubicOut } from 'svelte/easing'
+	import { expoIn, expoOut } from 'svelte/easing'
 	import { offCanvas } from '$lib/stores/offCanvas'
 
 	const { hide } = offCanvas
 
 	const css = {
-		wrapper: 'text-5xl',
-		menu: 'grid gap-y-7 font-normal',
+		wrapper: 'text-6xl',
+		menu: 'grid gap-y-7',
 		magnetic: '',
 		link: 'in-flex',
 		dot: '',
@@ -52,8 +52,8 @@
 						on:click={hide}
 						href={path}
 						class={css.link}
-						in:fly={{ x: 300, duration: 800, opacity: 1, delay: i * 30 + 200, easing: cubicOut }}
-						out:fly={{ x: 300, duration: 600, opacity: 1, delay: i * 50, easing: cubicIn }}
+						in:fly={{ x: 300, duration: 400, opacity: 1, delay: i * 30, easing: expoOut }}
+						out:fly={{ x: 300, duration: 500, opacity: 1, delay: i * 30, easing: expoIn }}
 					>
 						{title}
 						<span
