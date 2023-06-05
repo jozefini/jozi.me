@@ -1,5 +1,9 @@
 import create from 'zustand'
 
+type AppStore = {
+  isMenuOpen: boolean,
+}
+
 const useStore = create<{
   isMenuOpen: boolean
   isHeaderHidden: boolean
