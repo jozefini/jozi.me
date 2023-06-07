@@ -34,11 +34,15 @@ export default {
 		require('@tailwindcss/typography'),
 		plugin(({ addUtilities }) =>
 			addUtilities({
+				'.bg-hero': {
+					background:
+						'conic-gradient(yellow 40deg, blue 40deg, blue 45deg, transparent 45deg),conic-gradient(transparent 135deg, blue 135deg, blue 140deg, transparent 140deg)'
+				},
 				'.font-primary': {
-					'font-family': 'Roundo'
+					'font-family': 'Roundo, sans-serif'
 				},
 				'.font-secondary': {
-					'font-family': 'Melodrama'
+					'font-family': 'Melodrama, serif'
 				},
 				'.h-header': {
 					height: 'var(--h-header)'

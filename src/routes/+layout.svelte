@@ -1,56 +1,58 @@
 <script lang="ts">
 	import '../app.css'
-	import { beforeNavigate, goto } from '$app/navigation'
+	import { onMount } from 'svelte'
 	import Header from '$components/Header.svelte'
 	import Footer from '$components/Footer.svelte'
 	import { fly } from 'svelte/transition'
+	import { offCanvas } from '$lib/stores/offCanvas'
+	import { cubicIn, cubicOut } from 'svelte/easing'
+	import { cn } from '$lib/utils/helpers'
 
-	let navigating = false
-	let handleChange = () => {}
+	export let data
+	const { hide } = offCanvas
 
-	beforeNavigate((navigation: any) => {
-		if (!navigating) {
-			navigating = true
-			navigation.cancel()
-			handleChange = async () => {
-				const route = navigation.to.route.id
-				await goto(route)
-				navigating = false
-			}
-		}
+	// Everytime data.pathname changes hide the offCanvas.
+	$: if (data.pathname) {
+		hide()
+	}
+
+	let loaded = false
+	onMount(() => {
+		loaded = true
 	})
 
 	const css = {
-		main: '',
-		inner: '',
-		overlay: 'fixed inset-0 bg-orange-600 z-[999]'
+		page: 'min-h-screen max-w-[100vw] overflow-hidden font-primary fw-400',
+		inner: 'duration-500',
+		showInner: 'opacity-100 translate-y-0 ease-out',
+		hideInner: 'opacity-0 translate-y-20'
 	}
 
-	let inTime = 1000
-	let outTime = 1000
+	let inDuration = 700
+	let outDuration = 300
 </script>
 
-<div class="min-h-screen max-w-[100vw] overflow-hidden font-primary fw-400">
+<div class={css.page}>
 	<Header />
 
-	<main class={css.main}>
-		{#if navigating}
+	<main class={cn(css.inner, loaded ? css.showInner : css.hideInner)}>
+		{#key data.pathname}
 			<div
-				class={css.overlay}
-				in:fly={{ y: '100%', opacity: 1, duration: 700 }}
-				out:fly={{ y: '-100%', opacity: 1, duration: 700 }}
-			/>
-		{:else}
-			<div
-				class={css.inner}
-				in:fly={{ y: 200, duration: inTime, opacity: 1 }}
-				out:fly={{ y: -200, duration: outTime, opacity: 1 }}
-				on:outroend={handleChange}
+				class="wrap"
+				in:fly={{ y: 200, duration: inDuration, delay: outDuration, easing: cubicOut }}
+				out:fly={{ y: -400, duration: outDuration, easing: cubicIn, opacity: 1 }}
 			>
 				<slot />
 			</div>
-		{/if}
+		{/key}
 	</main>
 
 	<Footer />
 </div>
+
+<style>
+	.wrap {
+		grid-row: 1;
+		grid-column: 1;
+	}
+</style>

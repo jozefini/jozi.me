@@ -5,9 +5,6 @@
 	import Magnetic from '$components/Magnetic.svelte'
 	import { fly } from 'svelte/transition'
 	import { expoIn, expoOut } from 'svelte/easing'
-	import { offCanvas } from '$lib/stores/offCanvas'
-
-	const { hide } = offCanvas
 
 	const css = {
 		wrapper: 'text-6xl',
@@ -49,7 +46,6 @@
 			{#each navLinks as { title, path }, i}
 				<Magnetic tag="li" class={css.magnetic} power={30}>
 					<a
-						on:click={hide}
 						href={path}
 						class={css.link}
 						in:fly={{ x: 300, duration: 400, opacity: 1, delay: i * 30, easing: expoOut }}

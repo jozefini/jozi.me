@@ -8,6 +8,6 @@
 
 <section class={css.wrapper}>
 	<div class={css.inner}>
-		<h1 class={css.title}>Home</h1>
+		<h1 class={css.title}>Contact</h1>
 	</div>
 </section>

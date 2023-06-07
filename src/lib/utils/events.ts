@@ -1,7 +1,7 @@
 export function on(
 	el: any,
 	event: string,
-	handler: EventListenerOrEventListenerObject,
+	handler: (e: any) => void,
 	options?: boolean | AddEventListenerOptions
 ) {
 	el?.addEventListener(event, handler, options)
@@ -10,7 +10,7 @@ export function on(
 export function off(
 	el: any,
 	event: string,
-	handler: EventListenerOrEventListenerObject,
+	handler: (e: any) => void,
 	options?: boolean | EventListenerOptions
 ) {
 	el?.removeEventListener(event, handler, options)
